@@ -1,0 +1,49 @@
+{
+    "name": "carbonlint-cli",
+    "version": "1.0.1",
+    "description": "CLI tool for measuring and tracking the carbon footprint of your software projects. Supports CI/CD integration with carbon budgets.",
+    "main": "src/index.js",
+    "bin": {
+        "carbonlint": "./bin/carbonlint.js"
+    },
+    "type": "module",
+    "scripts": {
+        "test": "node bin/carbonlint.js --help"
+    },
+    "keywords": [
+        "carbon",
+        "sustainability",
+        "green-coding",
+        "carbon-footprint",
+        "energy",
+        "co2",
+        "climate",
+        "linter",
+        "ci-cd",
+        "devtools"
+    ],
+    "author": "Nishal K <nishalamv@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nishal21/carbonlint"
+    },
+    "homepage": "https://nishal21.github.io/carbonlint/",
+    "bugs": {
+        "url": "https://github.com/nishal21/carbonlint/issues"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "commander": "^12.1.0",
+        "ora": "^8.1.0"
+    },
+    "files": [
+        "bin/",
+        "src/",
+        "README.md",
+        "LICENSE"
+    ]
+}

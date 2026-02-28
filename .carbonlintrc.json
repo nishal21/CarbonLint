@@ -1,0 +1,7 @@
+{
+  "region": "GLOBAL-AVG",
+  "hardwareProfile": "laptop",
+  "pue": 1,
+  "maxCarbon": 100,
+  "failOnThreshold": false
+}

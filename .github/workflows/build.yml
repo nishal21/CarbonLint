@@ -1,0 +1,176 @@
+name: Build & Release CarbonLint
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  # ─────────────────────────────────────────────────
+  # Desktop builds: Windows, Linux, macOS
+  # ─────────────────────────────────────────────────
+  build-desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: windows-latest
+            target: x86_64-pc-windows-msvc
+            label: Windows
+          - platform: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+            label: Linux
+          - platform: macos-latest
+            target: aarch64-apple-darwin
+            label: macOS-ARM
+          - platform: macos-latest
+            target: x86_64-apple-darwin
+            label: macOS-Intel
+
+    runs-on: ${{ matrix.platform }}
+    name: Desktop (${{ matrix.label }})
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: tauri-dashboard/package-lock.json
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tauri-dashboard/src-tauri -> target
+
+      # Linux-only: install system dependencies
+      - name: Install Linux dependencies
+        if: matrix.platform == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            libappindicator3-dev \
+            librsvg2-dev \
+            patchelf \
+            libgtk-3-dev \
+            libssl-dev \
+            libayatana-appindicator3-dev
+
+      - name: Install frontend dependencies
+        working-directory: tauri-dashboard
+        run: npm ci
+
+      - name: Build Tauri app
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: tauri-dashboard
+          tauriScript: npm run tauri
+          args: --target ${{ matrix.target }}
+          tagName: ${{ github.ref_name }}
+          releaseName: 'CarbonLint ${{ github.ref_name }}'
+          releaseBody: |
+            ## CarbonLint ${{ github.ref_name }}
+
+            🌱 Real-time carbon footprint monitoring for developers.
+
+            ### Downloads
+            | Platform | File |
+            |----------|------|
+            | Windows | `.msi` / `.exe` |
+            | macOS | `.dmg` |
+            | Linux | `.deb` / `.AppImage` |
+            | Android | `.apk` (see Android job) |
+          releaseDraft: true
+          prerelease: false
+
+  # ─────────────────────────────────────────────────
+  # Android build
+  # ─────────────────────────────────────────────────
+  build-android:
+    runs-on: ubuntu-latest
+    name: Android (APK)
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: tauri-dashboard/package-lock.json
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,armv7-linux-androideabi,x86_64-linux-android,i686-linux-android
+
+      - name: Setup Java (JDK 17)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android NDK
+        run: |
+          sdkmanager --install "ndk;27.0.12077973"
+          echo "NDK_HOME=$ANDROID_HOME/ndk/27.0.12077973" >> $GITHUB_ENV
+
+      - name: Install Linux dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            libappindicator3-dev \
+            librsvg2-dev \
+            patchelf \
+            libgtk-3-dev \
+            libssl-dev \
+            libayatana-appindicator3-dev
+
+      - name: Install frontend dependencies
+        working-directory: tauri-dashboard
+        run: npm ci
+
+      - name: Initialize Tauri Android
+        working-directory: tauri-dashboard
+        run: npm run tauri android init
+
+      - name: Build Android APK (debug)
+        working-directory: tauri-dashboard
+        run: npm run tauri android build -- --apk
+
+      - name: Find and upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: CarbonLint-Android
+          path: tauri-dashboard/src-tauri/gen/android/**/outputs/**/*.apk
+          if-no-files-found: warn
+
+      - name: Upload APK to release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: tauri-dashboard/src-tauri/gen/android/**/outputs/**/*.apk
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
