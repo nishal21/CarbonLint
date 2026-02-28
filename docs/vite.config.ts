@@ -5,7 +5,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/CarbonLint/',
+  base: process.env.GITHUB_ACTIONS ? '/CarbonLint/' : '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
