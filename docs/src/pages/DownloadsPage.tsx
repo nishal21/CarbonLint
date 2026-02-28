@@ -12,8 +12,8 @@ export function DownloadsPage() {
             ),
             color: 'blue-500',
             downloads: [
-                { label: 'Download .exe', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.3/CarbonLint_0.1.0_x64-setup.exe', primary: true },
-                { label: 'Download .msi', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.3/CarbonLint_0.1.0_x64_en-US.msi', primary: false },
+                { label: 'Download .exe', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.4/CarbonLint_0.1.0_x64-setup.exe', primary: true },
+                { label: 'Download .msi', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.4/CarbonLint_0.1.0_x64_en-US.msi', primary: false },
             ],
             requirements: ['Windows 10 Build 19041+', '4GB RAM Minimum', 'WebView2 Runtime'],
             size: '~8 MB',
@@ -28,8 +28,8 @@ export function DownloadsPage() {
             ),
             color: 'slate-300',
             downloads: [
-                { label: 'Download .dmg (ARM)', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.3/CarbonLint_0.1.0_aarch64.dmg', primary: true },
-                { label: 'Download .dmg (Intel)', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.3/CarbonLint_0.1.0_x64.dmg', primary: false },
+                { label: 'Download .dmg (ARM)', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.4/CarbonLint_0.1.0_aarch64.dmg', primary: true },
+                { label: 'Download .dmg (Intel)', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.4/CarbonLint_0.1.0_x64.dmg', primary: false },
             ],
             requirements: ['macOS 10.15+', 'Apple Silicon or Intel', '4GB RAM Minimum'],
             size: '~10 MB',
@@ -44,9 +44,9 @@ export function DownloadsPage() {
             ),
             color: 'orange-400',
             downloads: [
-                { label: 'Download .deb', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.3/CarbonLint_0.1.0_amd64.deb', primary: true },
-                { label: 'Download AppImage', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.3/CarbonLint_0.1.0_amd64.AppImage', primary: false },
-                { label: 'Download .rpm', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.3/CarbonLint-0.1.0-1.x86_64.rpm', primary: false },
+                { label: 'Download .deb', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.4/CarbonLint_0.1.0_amd64.deb', primary: true },
+                { label: 'Download AppImage', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.4/CarbonLint_0.1.0_amd64.AppImage', primary: false },
+                { label: 'Download .rpm', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.4/CarbonLint-0.1.0-1.x86_64.rpm', primary: false },
             ],
             requirements: ['GLIBC 2.27+', 'x86_64 Architecture', 'GTK3 or Qt Environment'],
             size: '~9 MB',
@@ -61,7 +61,7 @@ export function DownloadsPage() {
             ),
             color: 'green-400',
             downloads: [
-                { label: 'Download .apk', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.3/app-universal-release-unsigned.apk', primary: true },
+                { label: 'Download .apk', href: 'https://github.com/nishal21/CarbonLint/releases/download/v0.1.4/app-universal-release-unsigned.apk', primary: true },
             ],
             requirements: ['Android 8.0+ (API 26)', 'ARM64 Processor', '50MB Free Space'],
             size: '~15 MB',
@@ -89,9 +89,13 @@ export function DownloadsPage() {
                     <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-4">
                         Download <span className="gradient-text">CarbonLint</span>
                     </h1>
-                    <p className="text-lg text-white/50 max-w-xl mx-auto">
+                    <p className="text-lg text-white/50 max-w-xl mx-auto mb-8">
                         Free, open-source, and built for every platform. Pick your OS and start tracking your carbon footprint.
                     </p>
+                    <a href="https://github.com/nishal21/CarbonLint/releases/tag/v0.1.4" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors">
+                        <span className="material-symbols-outlined text-[20px]">open_in_new</span>
+                        View GitHub Release Page
+                    </a>
                 </div>
             </section>
 
@@ -112,7 +116,7 @@ export function DownloadsPage() {
                                     </div>
                                 </div>
                                 <div className="text-right">
-                                    <span className="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">v0.1.3</span>
+                                    <span className="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">v0.1.4</span>
                                     <p className="text-[11px] text-white/25 mt-1">{platform.size}</p>
                                 </div>
                             </div>
