@@ -856,9 +856,13 @@ fn stop_profiling_impl(app_handle: &tauri::AppHandle, state: &State<AppState>) -
     }
 }
 
+#[cfg(desktop)]
 use tauri::menu::{Menu, MenuItem};
+#[cfg(desktop)]
 use tauri_plugin_autostart::MacosLauncher;
+#[cfg(desktop)]
 use tauri_plugin_global_shortcut::{Code, Modifiers, ShortcutState};
+
 use tauri_plugin_notification::NotificationExt;
 
 pub fn run() {
@@ -873,56 +877,64 @@ pub fn run() {
 
     spawn_slow_metrics_worker(slow_metrics);
 
-    tauri::Builder::default()
+    let mut builder = tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .plugin(tauri_plugin_notification::init())
-        .plugin(tauri_plugin_autostart::init(MacosLauncher::LaunchAgent, Some(vec![])))
-        .plugin(
-            tauri_plugin_global_shortcut::Builder::new()
-                .with_shortcut("CommandOrControl+Shift+P")
-                .unwrap()
-                .with_shortcut("CommandOrControl+Shift+D")
-                .unwrap()
-                .with_handler(|app, shortcut, event| {
-                    if event.state == ShortcutState::Pressed {
-                        if shortcut.matches(Modifiers::CONTROL | Modifiers::SHIFT, Code::KeyP) || 
-                           shortcut.matches(Modifiers::META | Modifiers::SHIFT, Code::KeyP) {
-                             let state = app.state::<AppState>();
-                             let is_profiling = state.profiling_session.lock().unwrap().is_some();
-                             
-                             if is_profiling {
-                                if let Ok(_) = stop_profiling_impl(app.app_handle(), &state) {
-                                    let _ = app.notification()
-                                        .builder()
-                                        .title("CarbonLint")
-                                        .body("Profiling stopped & saved!")
-                                        .show();
-                                }
-                             } else {
-                                if let Ok(_) = start_profiling_impl(&state) {
-                                    let _ = app.notification()
-                                        .builder()
-                                        .title("CarbonLint")
-                                        .body("Profiling started!")
-                                        .show();
-                                }
-                             }
-                        } else if shortcut.matches(Modifiers::CONTROL | Modifiers::SHIFT, Code::KeyD) ||
-                                  shortcut.matches(Modifiers::META | Modifiers::SHIFT, Code::KeyD) {
-                            if let Some(window) = app.get_webview_window("main") {
-                                if window.is_visible().unwrap_or(false) {
-                                    let _ = window.hide();
-                                } else {
-                                    let _ = window.show();
-                                    let _ = window.set_focus();
+        .plugin(tauri_plugin_notification::init());
+
+    #[cfg(desktop)]
+    {
+        builder = builder
+            .plugin(tauri_plugin_autostart::init(MacosLauncher::LaunchAgent, Some(vec![])))
+            .plugin(
+                tauri_plugin_global_shortcut::Builder::new()
+                    .with_shortcut("CommandOrControl+Shift+P")
+                    .unwrap()
+                    .with_shortcut("CommandOrControl+Shift+D")
+                    .unwrap()
+                    .with_handler(|app, shortcut, event| {
+                        if event.state == ShortcutState::Pressed {
+                            if shortcut.matches(Modifiers::CONTROL | Modifiers::SHIFT, Code::KeyP) || 
+                               shortcut.matches(Modifiers::META | Modifiers::SHIFT, Code::KeyP) {
+                                 let state = app.state::<AppState>();
+                                 let is_profiling = state.profiling_session.lock().unwrap().is_some();
+                                 
+                                 if is_profiling {
+                                    if let Ok(_) = stop_profiling_impl(app.app_handle(), &state) {
+                                        let _ = app.notification()
+                                            .builder()
+                                            .title("CarbonLint")
+                                            .body("Profiling stopped & saved!")
+                                            .show();
+                                    }
+                                 } else {
+                                    if let Ok(_) = start_profiling_impl(&state) {
+                                        let _ = app.notification()
+                                            .builder()
+                                            .title("CarbonLint")
+                                            .body("Profiling started!")
+                                            .show();
+                                    }
+                                 }
+                            } else if shortcut.matches(Modifiers::CONTROL | Modifiers::SHIFT, Code::KeyD) ||
+                                      shortcut.matches(Modifiers::META | Modifiers::SHIFT, Code::KeyD) {
+                                if let Some(window) = app.get_webview_window("main") {
+                                    if window.is_visible().unwrap_or(false) {
+                                        let _ = window.hide();
+                                    } else {
+                                        let _ = window.show();
+                                        let _ = window.set_focus();
+                                    }
                                 }
                             }
                         }
-                    }
-                })
-                .build()
-        )
-        .setup(|app| {
+                    })
+                    .build()
+            );
+    }
+
+    builder.setup(|app| {
+        #[cfg(desktop)]
+        {
             let icon_bytes = include_bytes!("../icons/icon.ico");
             let icon = tauri::image::Image::from_bytes(icon_bytes).expect("icon not found");
             
@@ -976,10 +988,11 @@ pub fn run() {
                     }
                 })
                 .build(app)?;
+        }
                 
-            Ok(())
-        })
-        .manage(app_state)
+        Ok(())
+    })
+    .manage(app_state)
         .invoke_handler(tauri::generate_handler![
             get_current_stats,
             start_profiling,
