@@ -865,6 +865,7 @@ use tauri_plugin_global_shortcut::{Code, Modifiers, ShortcutState};
 
 use tauri_plugin_notification::NotificationExt;
 
+#[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     let sys = Arc::new(Mutex::new(System::new_all()));
     let slow_metrics = Arc::new(Mutex::new(SlowMetrics::default()));
