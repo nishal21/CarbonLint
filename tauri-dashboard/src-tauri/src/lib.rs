@@ -994,7 +994,17 @@ pub fn run() {
         Ok(())
     })
     .manage(app_state)
-        .invoke_handler(tauri::generate_handler![
+    .on_window_event(|window, event| match event {
+        tauri::WindowEvent::CloseRequested { api, .. } => {
+            #[cfg(desktop)]
+            {
+                let _ = window.hide();
+                api.prevent_close();
+            }
+        }
+        _ => {}
+    })
+    .invoke_handler(tauri::generate_handler![
             get_current_stats,
             start_profiling,
             stop_profiling,
