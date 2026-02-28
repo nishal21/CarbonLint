@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/public/logo.png" alt="CarbonLint — Open Source Carbon Footprint Developer Tool" width="80" />
+  <img src="https://raw.githubusercontent.com/nishal21/CarbonLint/main/docs/public/logo.png" alt="CarbonLint — Open Source Carbon Footprint Developer Tool" width="80" />
 </p>
 
 <h1 align="center">CarbonLint</h1>
