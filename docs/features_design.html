@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CarbonLint Feature Highlights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc95c",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#0A0A0A",
+                        "slate-card": "#1E293B",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .keycap {
+            background: linear-gradient(180deg, #2d3748 0%, #1a202c 100%);
+            box-shadow: 0 4px 0 0 #000;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Sticky Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-white/5 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-background-dark font-bold text-xl">eco</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight dark:text-white">CarbonLint</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Downloads</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shortcuts</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+<button class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-2 px-5 rounded-lg transition-all transform active:scale-95">
+                    Download
+                </button>
+</div>
+</div>
+</header>
+<main class="relative overflow-hidden">
+<!-- Hero Section -->
+<section class="relative py-24 px-6">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent -z-10"></div>
+<div class="max-w-4xl mx-auto text-center space-y-6">
+<span class="inline-block py-1 px-3 bg-primary/20 text-primary rounded-full text-xs font-bold tracking-widest uppercase">Version 2.0 Available</span>
+<h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-tight dark:text-white">
+                    Powerful Features for <br/> <span class="text-primary">Sustainable Development</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    Optimize your code for performance and the planet with our advanced developer toolset. Real-time metrics that matter.
+                </p>
+<div class="flex items-center justify-center gap-4 pt-4">
+<button class="bg-primary text-background-dark font-bold px-8 py-4 rounded-xl text-lg hover:shadow-[0_0_20px_rgba(29,201,92,0.4)] transition-all">Get Started</button>
+<button class="bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-slate-300 dark:hover:bg-slate-700 transition-all">Documentation</button>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="py-20 px-6 max-w-7xl mx-auto">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h2 class="text-3xl font-bold dark:text-white mb-2">Core Capabilities</h2>
+<p class="text-slate-500">Everything you need to ship cleaner, faster code.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="glass-card p-8 rounded-xl hover:border-primary/50 transition-all group">
+<div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">memory</span>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-3">CPU Monitoring</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Real-time processor efficiency tracking. Visualize instruction cycles and identify energy-intensive logic branches.
+                    </p>
+</div>
+<!-- Feature 2 -->
+<div class="glass-card p-8 rounded-xl hover:border-primary/50 transition-all group">
+<div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-3">Memory Tracking</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Monitor heap and stack usage live. Detect memory leaks early and optimize garbage collection cycles automatically.
+                    </p>
+</div>
+<!-- Feature 3 -->
+<div class="glass-card p-8 rounded-xl hover:border-primary/50 transition-all group">
+<div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">waves</span>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-3">Network Analysis</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Analyze packet data and energy cost. Minimize payload sizes and reduce round-trip times for global sustainability.
+                    </p>
+</div>
+<!-- Feature 4 -->
+<div class="glass-card p-8 rounded-xl hover:border-primary/50 transition-all group">
+<div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">eco</span>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-3">CO2 Calculations</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Instant carbon footprint estimates based on runtime performance. Translate wattage into measurable environmental impact.
+                    </p>
+</div>
+<!-- Feature 5 -->
+<div class="glass-card p-8 rounded-xl hover:border-primary/50 transition-all group">
+<div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">bar_chart</span>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-3">Historical Reports</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Analyze long-term sustainability trends. Compare builds and see how your optimization efforts improve over time.
+                    </p>
+</div>
+<!-- Feature 6 -->
+<div class="glass-card p-8 rounded-xl hover:border-primary/50 transition-all group">
+<div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">app_registration</span>
+</div>
+<h3 class="text-xl font-bold dark:text-white mb-3">System Tray Integration</h3>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Seamless background operation. Get passive alerts and keep core metrics visible without interrupting your workflow.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Keyboard Shortcuts Section -->
+<section class="py-20 px-6 bg-slate-100 dark:bg-white/5 border-y border-white/5">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<h2 class="text-4xl font-bold dark:text-white leading-tight">Efficiency at your <br/>fingertips</h2>
+<p class="text-slate-400 text-lg">
+                        CarbonLint is built for speed. Control everything without leaving your editor using our custom keyboard shortcuts.
+                    </p>
+<div class="space-y-8 pt-4">
+<div class="flex items-center gap-8">
+<div class="flex gap-2">
+<span class="keycap min-w-[60px] h-12 flex items-center justify-center text-white font-bold rounded-lg border-t border-white/20">Ctrl</span>
+<span class="text-2xl text-slate-500 self-center">+</span>
+<span class="keycap w-12 h-12 flex items-center justify-center text-white font-bold rounded-lg border-t border-white/20">P</span>
+</div>
+<span class="text-slate-400 font-medium italic">Toggle Dashboard View</span>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex gap-2">
+<span class="keycap min-w-[60px] h-12 flex items-center justify-center text-white font-bold rounded-lg border-t border-white/20">Ctrl</span>
+<span class="text-2xl text-slate-500 self-center">+</span>
+<span class="keycap min-w-[70px] h-12 flex items-center justify-center text-white font-bold rounded-lg border-t border-white/20">Shift</span>
+<span class="text-2xl text-slate-500 self-center">+</span>
+<span class="keycap w-12 h-12 flex items-center justify-center text-white font-bold rounded-lg border-t border-white/20">H</span>
+</div>
+<span class="text-slate-400 font-medium italic">Open Performance History</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-primary/20 rounded-full blur-[100px] absolute -top-20 -right-20"></div>
+<div class="glass-card rounded-2xl p-4 shadow-2xl relative border-white/10">
+<img alt="Code editor showing carbon usage dashboard" class="rounded-xl opacity-80" data-alt="Screenshot of a developer code editor with eco-friendly dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDViy5JSHiNC_guQ7Xr0BTibNfTlMaSqnlXqvLodUOaFTkRFIST0vv8jiPBk0jjNKHDxeO8U7yEeOUD8M4HRR6jjs1XrzVIcx2WJClTlOsYCZDnYcotXgSt0cKV_nmzzavwypLzw8HVgSPjXAsCTgK64W_gLMUJU3y8TW-a7PcSW1FCpQxw0aSeo33IzAUna5wjqSJrLhpmzjoIC1OzgRfJKYnOKEQ8pcw9FZ6gn8k_nFdQKArSnEXFSQbHUmPkJ4oBP0i7lWL0lmg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Specs Section -->
+<section class="py-24 px-6 text-center">
+<h2 class="text-slate-500 uppercase tracking-widest text-xs font-bold mb-10">Built with modern tech</h2>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<div class="px-6 py-3 bg-slate-800/50 border border-white/10 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-400"></span>
+<span class="text-sm font-semibold dark:text-slate-300">Electron 40</span>
+</div>
+<div class="px-6 py-3 bg-slate-800/50 border border-white/10 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+<span class="text-sm font-semibold dark:text-slate-300">React 18</span>
+</div>
+<div class="px-6 py-3 bg-slate-800/50 border border-white/10 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-sm font-semibold dark:text-slate-300">Node.js</span>
+</div>
+<div class="px-6 py-3 bg-slate-800/50 border border-white/10 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+<span class="text-sm font-semibold dark:text-slate-300">TypeScript</span>
+</div>
+</div>
+</section>
+<!-- Footer CTA -->
+<footer class="py-20 px-6 border-t border-white/5 text-center">
+<div class="max-w-2xl mx-auto space-y-8">
+<h2 class="text-4xl font-bold dark:text-white">Ready to green your code?</h2>
+<p class="text-slate-400">Join 15,000+ developers making the web more sustainable, one commit at a time.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto bg-primary text-background-dark font-bold px-10 py-4 rounded-xl text-lg hover:scale-105 transition-transform">Download for Desktop</button>
+<button class="w-full sm:w-auto bg-transparent border-2 border-slate-700 dark:text-white font-bold px-10 py-4 rounded-xl text-lg hover:bg-white/5 transition-colors">Star on GitHub</button>
+</div>
+<div class="pt-12 text-slate-600 text-sm">
+                    © 2024 CarbonLint. All rights reserved. Built for the planet.
+                </div>
+</div>
+</footer>
+</main>
+</body></html>

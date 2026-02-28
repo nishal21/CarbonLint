@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CarbonLint Shortcuts Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#21c45d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#0A0A0A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .kbd-key {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0.75rem;
+            min-width: 3rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: #ffffff;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-bottom-width: 4px;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 0px rgba(0,0,0,0.3);
+            margin: 0 2px;
+        }
+        .kbd-key-small {
+            padding: 0.25rem 0.5rem;
+            min-width: 2rem;
+            font-size: 0.75rem;
+            border-bottom-width: 3px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation -->
+<header class="border-b border-white/10 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">eco</span>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">CarbonLint</span>
+</div>
+<nav class="hidden md:flex gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Docs</a>
+<a class="text-primary text-sm font-medium" href="#">Shortcuts</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined" style="font-size: 20px;">search</span>
+</span>
+<input class="bg-slate-100 dark:bg-white/5 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Quick search..." type="text"/>
+</div>
+<button class="bg-primary text-background-dark px-4 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+                        Get Started
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-4 py-12 md:py-20">
+<!-- Hero Section -->
+<section class="text-center mb-20">
+<h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4 text-slate-900 dark:text-white">
+                Keyboard Shortcuts
+            </h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                Master CarbonLint with professional-grade hotkeys. Boost your productivity and manage your carbon footprint without leaving the keyboard.
+            </p>
+</section>
+<!-- High Impact Core Functions -->
+<section class="grid md:grid-cols-2 gap-6 mb-20">
+<!-- Shortcut Card 1 -->
+<div class="bg-white dark:bg-[#111] border border-slate-200 dark:border-white/5 p-8 rounded-xl flex flex-col items-center text-center group hover:border-primary/50 transition-all shadow-xl shadow-black/20">
+<div class="mb-8 flex items-center gap-4">
+<span class="kbd-key">Ctrl</span>
+<span class="text-slate-500 font-mono">+</span>
+<span class="kbd-key">P</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Start / Stop Recording</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Primary command for session control and linting cycles.</p>
+<div class="mt-6 inline-flex items-center text-primary text-xs font-bold uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
+                    Core Function
+                </div>
+</div>
+<!-- Shortcut Card 2 -->
+<div class="bg-white dark:bg-[#111] border border-slate-200 dark:border-white/5 p-8 rounded-xl flex flex-col items-center text-center group hover:border-primary/50 transition-all shadow-xl shadow-black/20">
+<div class="mb-8 flex items-center gap-3">
+<span class="kbd-key">Ctrl</span>
+<span class="text-slate-500 font-mono">+</span>
+<span class="kbd-key">Shift</span>
+<span class="text-slate-500 font-mono">+</span>
+<span class="kbd-key">H</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Hide / Show Window</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Toggle interface visibility instantly to focus on your code.</p>
+<div class="mt-6 inline-flex items-center text-primary text-xs font-bold uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">
+                    UI Management
+                </div>
+</div>
+</section>
+<!-- Additional Shortcuts Table -->
+<section class="mb-20">
+<h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">list_alt</span>
+                Command Reference
+            </h2>
+<div class="overflow-hidden rounded-xl border border-slate-200 dark:border-white/5 bg-white dark:bg-[#111]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-white/5 text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">
+<th class="px-6 py-4">Action</th>
+<th class="px-6 py-4">Shortcut</th>
+<th class="px-6 py-4 hidden md:table-cell">Usage</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-white/5">
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
+<td class="px-6 py-5 font-medium">Refresh Analysis</td>
+<td class="px-6 py-5">
+<span class="kbd-key kbd-key-small">Ctrl</span>
+<span class="kbd-key kbd-key-small">R</span>
+</td>
+<td class="px-6 py-5 text-slate-500 dark:text-slate-400 text-sm hidden md:table-cell">Trigger a full re-scan of the current project tree.</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 font-medium">Export Report</td>
+<td class="px-6 py-5">
+<span class="kbd-key kbd-key-small">Ctrl</span>
+<span class="kbd-key kbd-key-small">E</span>
+</td>
+<td class="px-6 py-5 text-slate-500 dark:text-slate-400 text-sm hidden md:table-cell">Download current carbon audit as PDF or JSON.</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 font-medium">Open Settings</td>
+<td class="px-6 py-5">
+<span class="kbd-key kbd-key-small">Ctrl</span>
+<span class="kbd-key kbd-key-small">S</span>
+</td>
+<td class="px-6 py-5 text-slate-500 dark:text-slate-400 text-sm hidden md:table-cell">Modify thresholds, API keys, and notification preferences.</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 font-medium">Quit Application</td>
+<td class="px-6 py-5">
+<span class="kbd-key kbd-key-small">Ctrl</span>
+<span class="kbd-key kbd-key-small">Q</span>
+</td>
+<td class="px-6 py-5 text-slate-500 dark:text-slate-400 text-sm hidden md:table-cell">Safely stop all background linting processes and exit.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Pro Tips Section -->
+<section class="bg-primary/5 border-l-4 border-primary p-8 rounded-r-xl">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">tips_and_updates</span>
+<div>
+<h2 class="text-xl font-bold mb-2">Pro Tips for Expert Users</h2>
+<ul class="space-y-4 text-slate-600 dark:text-slate-400">
+<li class="flex items-start gap-2">
+<span class="text-primary mt-1">•</span>
+<span>Combine <span class="font-mono text-primary">[Ctrl]+[P]</span> with your IDE's auto-save to ensure real-time linting of every code change.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary mt-1">•</span>
+<span>You can re-map any of these keys in the <span class="italic">Settings &gt; Keybindings</span> menu to match your preferred editor (Vim/Emacs styles supported).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary mt-1">•</span>
+<span>Use <span class="font-mono text-primary">[Ctrl]+[Shift]+[L]</span> (not listed above) to quickly toggle the mini-hud on/off for a distraction-free environment.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-200 dark:border-white/5 bg-white dark:bg-[#0A0A0A] py-12">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<div class="flex justify-center items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary/40" style="font-size: 24px;">eco</span>
+<span class="text-lg font-bold text-slate-400">CarbonLint</span>
+</div>
+<p class="text-slate-500 text-sm mb-8">Efficient linting for a sustainable digital future.</p>
+<div class="flex justify-center gap-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+<a class="hover:text-primary transition-colors" href="#">GitHub</a>
+</div>
+<p class="mt-8 text-slate-600 text-[10px]">© 2024 CarbonLint. All shortcuts are configurable via user config files.</p>
+</div>
+</footer>
+</body></html>

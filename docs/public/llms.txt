@@ -1,0 +1,54 @@
+# CarbonLint — Real-Time Carbon Footprint Monitoring for Developers
+> CarbonLint is a free, open-source desktop application that tracks your code's energy consumption and CO2 emissions in real time. Built with Tauri and Rust for minimal resource usage, available on Windows, Linux, macOS, and Android.
+
+## Core Pages
+- [Home](https://nishal21.github.io/carbonlint/): Overview — track your coding carbon footprint with real-time monitoring
+- [Features](https://nishal21.github.io/carbonlint/features): CPU monitoring, memory tracking, network analysis, CO2 calculations, historical reports, system tray integration
+- [Downloads](https://nishal21.github.io/carbonlint/downloads): Download CarbonLint for Windows (.exe/.msi), Linux (.deb/.AppImage), macOS (.dmg), and Android (.apk)
+- [Keyboard Shortcuts](https://nishal21.github.io/carbonlint/shortcuts): Global shortcuts — Ctrl+Shift+P for profiling toggle, Ctrl+Shift+D for dashboard
+- [About](https://nishal21.github.io/carbonlint/about): Created by Nishal K from Kerala, India. Open source under MIT License
+- [Privacy Policy](https://nishal21.github.io/carbonlint/privacy): All data stays on your device. No telemetry, no cloud sync
+- [Terms of Service](https://nishal21.github.io/carbonlint/terms): MIT License terms and conditions
+
+## What is CarbonLint?
+CarbonLint is a real-time carbon footprint monitoring tool designed for developers who care about the environmental impact of their code. It measures CPU, memory, disk, and network utilization during coding sessions and calculates CO2 emissions using region-specific grid carbon intensity data.
+
+## Key Features
+- Real-time system monitoring (CPU, memory, disk, network, GPU)
+- Carbon footprint calculation with 7 regional grid intensity profiles
+- Profiling sessions with detailed energy and emissions reports
+- System tray integration with global keyboard shortcuts
+- CI/CD pipeline carbon budget tracking and PR comments
+- Weekly and historical reports with trend analysis
+- Cross-platform: Windows, Linux, macOS, Android
+- Built with Tauri + Rust backend for <5MB memory footprint
+
+## How It Works
+1. CarbonLint runs in your system tray as a lightweight background process
+2. Start a profiling session via keyboard shortcut (Ctrl+Shift+P) or dashboard
+3. It samples CPU, memory, disk, and network utilization every 2 seconds
+4. When stopped, it calculates energy consumption (kWh) using hardware TDP profiles
+5. Energy is converted to CO2 using your selected region's grid carbon intensity (gCO2/kWh)
+6. Results are saved locally and displayed in the dashboard with trends and comparisons
+
+## Supported Regions
+- US-WEST (California): 210 gCO2/kWh
+- US-EAST (Virginia): 380 gCO2/kWh
+- EU-WEST (Ireland): 300 gCO2/kWh
+- EU-NORTH (Sweden): 25 gCO2/kWh
+- ASIA-EAST (Japan): 470 gCO2/kWh
+- ASIA-SOUTH (India): 700 gCO2/kWh
+- GLOBAL-AVG (Mixed): 475 gCO2/kWh
+
+## Tech Stack
+- Frontend: React 19 + Vite + TypeScript
+- Backend: Tauri 2 + Rust
+- System monitoring: sysinfo crate
+- Plugins: tauri-plugin-notification, tauri-plugin-autostart, tauri-plugin-global-shortcut
+
+## Links
+- Website: https://nishal21.github.io/carbonlint/
+- Mirror: https://carbonlint.netlify.app
+- GitHub: https://github.com/nishal21/CarbonLint
+- Releases: https://github.com/nishal21/CarbonLint/releases
+- License: MIT
