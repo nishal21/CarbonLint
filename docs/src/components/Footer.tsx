@@ -73,7 +73,7 @@ export function Footer() {
                         © {year} CarbonLint. Built with 💚 for the planet.
                     </p>
                     <p className="text-xs text-white/20">
-                        Made in India by <a href="https://github.com/nishal21" target="_blank" rel="noreferrer" className="text-white/40 hover:text-primary transition-colors">Nishal K</a>
+                        Made in Kerala by <a href="https://github.com/nishal21" target="_blank" rel="noreferrer" className="text-white/40 hover:text-primary transition-colors">Nishal K</a>
                     </p>
                 </div>
             </div>
