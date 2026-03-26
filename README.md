@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/carbonlint-cli"><img src="https://img.shields.io/npm/v/carbonlint-cli?style=flat-square&color=22c55e&label=npm" alt="carbonlint-cli npm version" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-22c55e?style=flat-square" alt="MIT License" /></a>
-  <a href="https://nishal21.github.io/carbonlint/"><img src="https://img.shields.io/badge/docs-live-22c55e?style=flat-square" alt="CarbonLint Documentation" /></a>
+  <a href="https://nishal21.github.io/CarbonLint/"><img src="https://img.shields.io/badge/docs-live-22c55e?style=flat-square" alt="CarbonLint Documentation" /></a>
   <a href="https://github.com/nishal21/carbonlint/actions"><img src="https://img.shields.io/github/actions/workflow/status/nishal21/carbonlint/build.yml?style=flat-square&label=build" alt="GitHub Actions Build Status" /></a>
 </p>
 
