@@ -37,7 +37,7 @@ export function Navbar() {
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2.5 group cursor-pointer z-50 relative">
                     <img
-                        src="/public/logo.png"
+                        src="logo.png"
                         alt="CarbonLint"
                         className="size-9 rounded-lg group-hover:scale-110 transition-transform duration-300"
                     />
